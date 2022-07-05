@@ -1,13 +1,19 @@
 function colorPalette() {
   const colorArray = ['black', 'blue', 'red', 'yellow'];
+  const selectedOld = document.getElementsByClassName('selected');
 
   for (let index = 0; index < 4; index += 1) {
     const DivColor = document.getElementById(`${index}`);
     DivColor.style.backgroundColor = colorArray[index];
+    DivColor.addEventListener('click', () => {
+      selectedOld[0].classList.remove('selected');
+      console.log(selectedOld[0]);
+
+      DivColor.classList.add('selected');
+      console.log(DivColor);
+    });
   }
 }
-
-colorPalette();
 
 function criandoPixel() {
   const pixelBoard = document.getElementById('pixel-board');
@@ -16,8 +22,13 @@ function criandoPixel() {
 
   pixelBoard.appendChild(DivPixel).className = 'pixel';
 
-  console.log('teste');
+  DivPixel.addEventListener('click', () => {
+    console.log('PIXEL');
+  });
 }
+
+colorPalette();
+
 criandoPixel();
 criandoPixel();
 criandoPixel();

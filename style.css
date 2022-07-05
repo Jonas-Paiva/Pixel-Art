@@ -14,6 +14,10 @@ html {
   margin: 5px;
 }
 
+.color:hover {
+  transform: scale(0.95);
+}
+
 #pixel-board {
   width: 210px;
   border: 1px solid black;
@@ -27,5 +31,11 @@ html {
   height: 40px;
   background-color: white;
 }
+
+.pixel:hover {
+  transform: scale(0.95);
+}
+
 .selected {
+  color: '';
 }

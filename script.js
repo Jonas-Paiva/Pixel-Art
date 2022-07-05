@@ -10,7 +10,6 @@ function colorPalette() {
       console.log(selectedOld[0]);
 
       DivColor.classList.add('selected');
-      console.log(DivColor);
     });
   }
 }
@@ -23,6 +22,9 @@ function criandoPixel() {
   pixelBoard.appendChild(DivPixel).className = 'pixel';
 
   DivPixel.addEventListener('click', () => {
+    const selectedNow = document.getElementsByClassName('selected')[0];
+    DivPixel.style.backgroundColor = selectedNow.style.backgroundColor;
+
     console.log('PIXEL');
   });
 }

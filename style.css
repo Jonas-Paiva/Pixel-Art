@@ -19,21 +19,18 @@ html {
 }
 
 #pixel-board {
+  display: flex;
+  flex-wrap: wrap;
   width: 210px;
+  height: 210px;
   border: 1px solid black;
 }
 
 .pixel {
-  margin: 0%;
-  display: inline-block;
   border: 1px solid black;
   width: 40px;
   height: 40px;
   background-color: white;
-}
-
-.pixel:hover {
-  transform: scale(0.95);
 }
 
 .selected {

@@ -1,62 +1,38 @@
 function colorPalette() {
   const colorArray = ['black', 'blue', 'red', 'yellow'];
-  const selectedOld = document.getElementsByClassName('selected');
 
   for (let index = 0; index < 4; index += 1) {
     const DivColor = document.getElementById(`${index}`);
-    DivColor.style.backgroundColor = colorArray[index];
-    DivColor.addEventListener('click', () => {
-      selectedOld[0].classList.remove('selected');
-      console.log(selectedOld[0]);
 
+    DivColor.style.backgroundColor = colorArray[index];
+
+    DivColor.addEventListener('click', () => {
+      const selectedOld = document.getElementsByClassName('selected');
+      selectedOld[0].classList.remove('selected');
       DivColor.classList.add('selected');
     });
   }
 }
 
-function criandoPixel() {
-  const pixelBoard = document.getElementById('pixel-board');
+window.onload = colorPalette;
 
+function criandoPixel(Y = 2) {
   const DivPixel = document.createElement('div');
-
+  const pixelBoard = document.getElementById('pixel-board');
   pixelBoard.appendChild(DivPixel).className = 'pixel';
 
   DivPixel.addEventListener('click', () => {
     const selectedNow = document.getElementsByClassName('selected')[0];
     DivPixel.style.backgroundColor = selectedNow.style.backgroundColor;
-
-    console.log('PIXEL');
   });
 }
-
-colorPalette();
-
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
 criandoPixel();
 
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
+const button = document.getElementById('clear-board');
 
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
-
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
-
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
-criandoPixel();
+button.addEventListener('click', () => {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index = +1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
